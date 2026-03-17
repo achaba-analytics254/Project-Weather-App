@@ -1,0 +1,137 @@
+/**----------------CSS variables for maintanability-----------------------**/
+:root{
+    --primary-color: #0089af;
+    --primary-dark: #025b74;
+    --primary-light: #8fdcf1;
+    --secondary-color: #ee1c23;
+    --secondary-dark: #af070c;
+    --text-color: #242424;
+    --text-light: #272727;
+    --background-light: #f8f8f8;
+    --background-dark: #585858;
+    --white: #ffffff;
+    --black: #000000;
+    --gray-light: #d1d1d1;
+    --gray: #9e9e9e;
+    --gray-dark: #6c757d;
+    --success: #28a745;
+    --error: #dc3545;
+    --warning: #ffc107;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+    --font-family: sans-serif;   
+    
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+header{
+    display: flex;
+}
+
+header button {
+    padding: 10px 50px;
+    border-radius:50px;
+    border: none;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-left: -180px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+header button:hover{
+    background: var(--primary-dark);
+    transform: translateX(-2px);
+}
+
+.wrapper{
+    background: var(--white);
+    margin-top: 50px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    flex-direction: column;
+}
+
+input{
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    outline: 1px solid var(--gray-light);
+    padding: 10px 20px;
+    box-shadow: var(--shadow-sm);
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.errorMessage{
+    display: none;
+    background: var(--error);
+    color: var(--white);
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: var(--border-radius);
+    width: 100%;
+}
+
+.weatherInfo{
+    background: var(--primary-color);
+    margin-top: 30px;
+    color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow-lg);
+}
+
+.weatherInfo h2{
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 1.8rem;
+}
+
+.weatherInfo p{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        background: var(--background-light);
+        overflow: hidden;
+    }
+    .wrapper{
+        height: 100vh;
+        padding: 15px;
+    }
+    header{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    header button{
+        margin-left: auto;
+        width: 100%;
+    }
+}
